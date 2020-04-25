@@ -8,8 +8,17 @@ class Welcome extends StatefulWidget {
 class _WelcomeState extends State<Welcome> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'devSocial',
+          style: TextStyle(
+            fontWeight: FontWeight.bold
+          ),
+          ),
+        backgroundColor: Colors.redAccent,
+        automaticallyImplyLeading: false,
+      ),
     );
   }
 }

@@ -8,8 +8,17 @@ class Signup extends StatefulWidget {
 class _SignupState extends State<Signup> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'devSocial',
+          style: TextStyle(
+            fontWeight: FontWeight.bold
+          ),
+          ),
+        backgroundColor: Colors.redAccent,
+        automaticallyImplyLeading: false,
+      ),
     );
   }
 }
