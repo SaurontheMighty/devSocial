@@ -4,7 +4,6 @@ import 'package:devsocial/paths/welcome.dart';
 import 'package:devsocial/paths/login.dart';
 import 'package:devsocial/paths/signup.dart';
 
-
 void main() => runApp(MaterialApp(
   initialRoute: '/home',
   routes: {
