@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "40981032106",
+    "firebase_url": "https://devsocial-2352a.firebaseio.com",
+    "project_id": "devsocial-2352a",
+    "storage_bucket": "devsocial-2352a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:40981032106:android:b286342e4273923a6f34d3",
+        "android_client_info": {
+          "package_name": "com.example.devsocial"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "40981032106-ba8cb72o2q7utgq2k34hr5frm5m61c89.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJJFlfPMqS0LwDjp0bedIanK-v5gF59ys"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "40981032106-ba8cb72o2q7utgq2k34hr5frm5m61c89.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
