@@ -5,28 +5,28 @@ class PostCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
     child: Card(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          const ListTile(
-            leading: Icon(Icons.code),
-            title: Text(
-              'The Enchanted Nightingale'),
-            subtitle: Text('Music by Julie Gable. Lyrics by Sidney Stein.'),
-          ),
-          ButtonBar(
-            children: <Widget>[
-              FlatButton(
-                child: const Text('BUY TICKETS'),
-                onPressed: () { /* ... */ },
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(8,8,8,15),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            const ListTile(
+              leading: Icon(Icons.code),
+              title: Padding(
+                padding: const EdgeInsets.fromLTRB(0,8,8,10),
+                child: Text(
+                  'Best programming language?',
+                  style: TextStyle(
+                    fontSize: 20,
+                    letterSpacing: 1,
+                  ),
+                ),
               ),
-              FlatButton(
-                child: const Text('LISTEN'),
-                onPressed: () { /* ... */ },
-              ),
-            ],
-          ),
-        ],
+              
+              subtitle: Text('PYTHON iss the besst.'),
+            ),
+          ],
+        ),
       ),
     ),
   );
