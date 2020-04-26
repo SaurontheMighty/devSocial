@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:devsocial/post.dart';
+
+class Post {
+  String title;
+  String subtitle;
+
+  Post({this.title, this.subtitle});
+}
 
 class PostCard extends StatelessWidget {
   

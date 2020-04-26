@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:devsocial/postcard.dart';
-import 'package:devsocial/post.dart';
 
 class Page1 extends StatefulWidget {
   @override
@@ -16,7 +15,7 @@ class _Page1State extends State<Page1> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return ListView(
       children: posts.map((post)=>PostCard(
             post: post,
         )
