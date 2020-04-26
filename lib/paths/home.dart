@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:devsocial/postcard.dart';
+import 'package:devsocial/Page1.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -27,12 +27,8 @@ class _HomeState extends State<Home> {
           body: TabBarView(
             children: [
               new Container(
-                color: Colors.redAccent,
-                child: Column(
-                  children: <Widget>[
-                    PostCard(),
-                    PostCard()
-                ],)
+                color: Colors.redAccent[100],
+                child: Page1(),
               ),
               new Container(
                 color: Colors.orange,

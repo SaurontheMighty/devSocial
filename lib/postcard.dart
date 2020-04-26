@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:devsocial/post.dart';
 
 class PostCard extends StatelessWidget {
+  
+  final Post post;
+  PostCard({this.post});  
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -10,20 +15,19 @@ class PostCard extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            const ListTile(
+            ListTile(
               leading: Icon(Icons.code),
               title: Padding(
                 padding: const EdgeInsets.fromLTRB(0,8,8,10),
                 child: Text(
-                  'Best programming language?',
+                  post.title,
                   style: TextStyle(
                     fontSize: 20,
                     letterSpacing: 1,
                   ),
                 ),
               ),
-              
-              subtitle: Text('PYTHON iss the besst.'),
+              subtitle: Text(post.subtitle),
             ),
           ],
         ),
