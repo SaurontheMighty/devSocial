@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:devsocial/postcard.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -28,20 +27,15 @@ class _HomeState extends State<Home> {
             children: [
               new Container(
                 color: Colors.redAccent,
-                child: Column(children: <Widget>[
-                  PostCard(),
-                  PostCard(),
-                ],
-                )
               ),
               new Container(
-                color: Colors.orangeAccent,
+                color: Colors.orange,
               ),
               new Container(
-                color: Colors.yellowAccent,
+                color: Colors.lightGreen,
               ),
               new Container(
-                color: Colors.greenAccent,
+                color: Colors.red,
               ),
             ],
           ),
