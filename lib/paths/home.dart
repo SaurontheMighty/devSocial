@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:devsocial/Page1.dart';
+import 'package:devsocial/Page2.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -30,8 +31,25 @@ class _HomeState extends State<Home> {
                 color: Colors.redAccent[100],
                 child: Page1(),
               ),
-              new Container(
-                color: Colors.orange,
+              Container(
+                color: Colors.red[900],
+                child: new Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: Text(
+                        'Friends: ',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                          color: Colors.white
+                        ),
+                      ),
+                    ),
+                    Page2()
+                  ],
+                ),
               ),
               new Container(
                 color: Colors.lightGreen,
