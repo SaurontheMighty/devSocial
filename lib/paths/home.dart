@@ -65,10 +65,10 @@ class _HomeState extends State<Home> {
               icon: new Icon(Icons.home),
             ),
             Tab(
-              icon: new Icon(Icons.group),
+              icon: new Icon(Icons.chat_bubble),
             ),
             Tab(
-              icon: new Icon(Icons.chat_bubble),
+              icon: new Icon(Icons.person),
             ),
             Tab(icon: new Icon(Icons.settings),)
           ],
