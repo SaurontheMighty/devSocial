@@ -1,4 +1,8 @@
+import 'package:devsocial/paths/home.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 class Login extends StatefulWidget {
   @override
   _LoginState createState() => _LoginState();
@@ -42,17 +46,84 @@ class _LoginState extends State<Login> {
               )
             ),
             SizedBox(height: 30),
-            FlatButton(onPressed: (){ 
-              Navigator.pushNamed(context, '/home');}
+            FlatButton(onPressed: (){onClickGitHubLoginButton();}
             , child: 
             Text(
-              "Login"
+              "Github"
             ),
-            color: Colors.blue,)
+            color: Colors.blue,),
+            SizedBox(height: 30),
+            FlatButton(onPressed: (){ signInWithGoogle().whenComplete(() {
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) {
+            return Home();
+          },
+        ),
+      );
+    });}
+            , child: 
+            Text(
+              "Google"
+            ),
+            color: Colors.red,),
           ],
         ),
       ),
       
     );
+  }
+}
+
+final FirebaseAuth _auth = FirebaseAuth.instance;
+final GoogleSignIn googleSignIn = GoogleSignIn();
+String email;
+Future<String> signInWithGoogle() async {
+  final GoogleSignInAccount googleSignInAccount = await googleSignIn.signIn();
+  final GoogleSignInAuthentication googleSignInAuthentication =
+      await googleSignInAccount.authentication;
+
+  final AuthCredential credential = GoogleAuthProvider.getCredential(
+    accessToken: googleSignInAuthentication.accessToken,
+    idToken: googleSignInAuthentication.idToken,
+  );
+
+  final AuthResult authResult = await _auth.signInWithCredential(credential);
+  final FirebaseUser user = authResult.user;
+
+  assert(!user.isAnonymous);
+  assert(await user.getIdToken() != null);
+
+  final FirebaseUser currentUser = await _auth.currentUser();
+  assert(user.uid == currentUser.uid);
+  print(user.email);
+  email = user.email.toString();
+  return 'signInWithGoogle succeeded: $user';
+}
+
+void signOutGoogle() async{
+  await googleSignIn.signOut();
+
+  print("User Sign Out");
+}
+
+
+
+
+
+
+void onClickGitHubLoginButton() async {
+  const String url = "https://github.com/login/oauth/authorize" +
+      "?client_id=" + "1435bc0f9fcfa1003de3" +
+      "&scope=public_repo%20read:user%20user:email";
+
+  if (await canLaunch(url)) {
+    await launch(
+      url,
+      forceSafariVC: false,
+      forceWebView: false,
+    );
+  } else {
+    print("url not launching");
   }
 }
