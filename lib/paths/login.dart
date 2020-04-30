@@ -6,9 +6,11 @@ import 'package:google_sign_in/google_sign_in.dart';
 class Login extends StatefulWidget {
   @override
   _LoginState createState() => _LoginState();
+  
 }
 //aaaa
 class _LoginState extends State<Login> {
+ 
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -75,10 +77,16 @@ class _LoginState extends State<Login> {
   }
 }
 
+class data{
+  static String email;
+  static String image;
+
+}
 final FirebaseAuth _auth = FirebaseAuth.instance;
 final GoogleSignIn googleSignIn = GoogleSignIn();
-String email;
+
 Future<String> signInWithGoogle() async {
+  
   final GoogleSignInAccount googleSignInAccount = await googleSignIn.signIn();
   final GoogleSignInAuthentication googleSignInAuthentication =
       await googleSignInAccount.authentication;
@@ -96,8 +104,9 @@ Future<String> signInWithGoogle() async {
 
   final FirebaseUser currentUser = await _auth.currentUser();
   assert(user.uid == currentUser.uid);
+  data.image = user.photoUrl.toString();
   print(user.email);
-  email = user.email.toString();
+  data.email = user.email.toString();
   return 'signInWithGoogle succeeded: $user';
 }
 
@@ -106,6 +115,7 @@ void signOutGoogle() async{
 
   print("User Sign Out");
 }
+
 
 
 

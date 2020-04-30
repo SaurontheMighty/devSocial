@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:devsocial/Page1.dart';
 import 'package:devsocial/Page2.dart';
+import 'package:devsocial/Page3.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -53,6 +54,7 @@ class _HomeState extends State<Home> {
               ),
               new Container(
                 color: Colors.lightGreen,
+                child: Page3(),
               ),
               new Container(
                 color: Colors.red,
