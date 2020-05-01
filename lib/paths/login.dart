@@ -56,6 +56,7 @@ class _LoginState extends State<Login> {
             color: Colors.blue,),
             SizedBox(height: 30),
             FlatButton(onPressed: (){ signInWithGoogle().whenComplete(() {
+              if(data.email != null){
       Navigator.of(context).push(
         MaterialPageRoute(
           builder: (context) {
@@ -63,6 +64,9 @@ class _LoginState extends State<Login> {
           },
         ),
       );
+            }else{
+              print("error");
+            }
     });}
             , child: 
             Text(
