@@ -91,7 +91,16 @@ class _LoginState extends State<Login> {
               )
             ),
             SizedBox(height: 30),
-            FlatButton(onPressed: (){onClickGitHubLoginButton();}
+            FlatButton(onPressed: (){
+              onClickGitHubLoginButton();
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) {
+                    return Home();
+                  },
+                ),
+              );
+              }
             , child: 
             Text(
               "Github"
@@ -147,8 +156,7 @@ Future<FirebaseUser> loginWithGitHub(String code) async {
     )),
   );
 
-  GitHubLoginResponse loginResponse =
-      GitHubLoginResponse.fromJson(json.decode(response.body));
+  GitHubLoginResponse loginResponse = GitHubLoginResponse.fromJson(json.decode(response.body));
 
   //FIREBASE STUFF
   final AuthCredential credential = GithubAuthProvider.getCredential(
