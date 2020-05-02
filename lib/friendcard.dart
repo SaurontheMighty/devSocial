@@ -1,10 +1,12 @@
+import 'package:devsocial/sauronthemighty.dart';
 import 'package:flutter/material.dart';
 
 class Friend {
   String name;
   String status;
+  String chat;
 
-  Friend({this.name, this.status});
+  Friend({this.name, this.status, this.chat});
 }
 
 class FriendCard extends StatelessWidget {
@@ -18,8 +20,17 @@ class FriendCard extends StatelessWidget {
     if(friend.status == 'Online'){
       statusColor = Colors.green[400];
     }
-    return Center(
-    child: Card(
+    return GestureDetector(
+      onTap: () {
+        Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) {
+                    return sauronthemighty();
+                  },
+                ),
+              );
+      },
+      child: Card(
       child: Padding(
         padding: const EdgeInsets.fromLTRB(4,4,4,10),
         child: ListTile(
@@ -41,6 +52,6 @@ class FriendCard extends StatelessWidget {
         ),
       ),
     ),
-  );
+    );
   }
 }

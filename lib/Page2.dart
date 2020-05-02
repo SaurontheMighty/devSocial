@@ -9,8 +9,8 @@ class Page2 extends StatefulWidget {
 class _Page2State extends State<Page2> {
 
   List<Friend> friends = [
-    Friend(name:"SaurontheMighty", status: 'Online'),
-    Friend(name:"miphc42", status: 'Offline')
+    Friend(name:"SaurontheMighty", status: 'Online', chat: '/sauronthemighty'),
+    Friend(name:"miphc42", status: 'Offline', chat: '/miphc42')
   ];
 
   @override
