@@ -80,7 +80,7 @@ class _LoginState extends State<Login> {
     );
   }
 }
-
+//adfasf
 class data{
   static String email;
   static String image;
