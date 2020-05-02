@@ -27,7 +27,7 @@ class _Page3State extends State<Page3> {
                       image: new DecorationImage(
                       fit: BoxFit.fill,
                     image: new NetworkImage(
-                                data.image)
+                                "https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png")
                           )
                             ),
                ),
@@ -35,7 +35,7 @@ class _Page3State extends State<Page3> {
                  height:  50,
                ),
 
-           Text(data.email)
+           Text("an email")
           ],
         ),            
       ),
