@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:devsocial/friendcard.dart';
-
 class Page2 extends StatefulWidget {
   @override
   _Page2State createState() => _Page2State();

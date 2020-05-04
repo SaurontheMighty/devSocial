@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:devsocial/Page1.dart';
 import 'package:devsocial/Page2.dart';
 import 'package:devsocial/Page3.dart';
+import 'package:devsocial/text.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -23,6 +24,16 @@ class _HomeState extends State<Home> {
                 fontWeight: FontWeight.bold
               ),
             ),
+             actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.message),
+            iconSize: 30.0,
+            color: Colors.white,
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Texting()));
+            },
+          ),
+        ],
             backgroundColor: Colors.redAccent,
             automaticallyImplyLeading: false,
           ),
